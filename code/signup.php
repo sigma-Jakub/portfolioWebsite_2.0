@@ -93,7 +93,7 @@
                     <?php echo $errorMessage ?>
                 </div>
                 <div class="login-container">
-                    <p class="login-text">Already have an account? <a href="index.php" class="login-link">Log in here.</a></p>
+                    <p class="login-text">Existing user? <a href="index.php" class="login-link">Log in here.</a></p>
                 </div>
             </div>
         </form>

@@ -71,7 +71,7 @@
                     <?php echo $errorMessage ?>
                 </div>
                 <div class="signup-container">
-                    <p class="signup-text">Don't have an account? <a href="signup.php" class="signup-link">Sign up here.</a></p>
+                    <p class="signup-text">No account? <a href="signup.php" class="signup-link">Sign up here.</a></p>
                 </div>
             </div>
         </form>
