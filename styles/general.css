@@ -1,0 +1,106 @@
+body {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    color: #00FFFF;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg,#450A0A 0%,#0B0E14 35%,#0B0E14 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #00FFFF;
+}
+
+p {
+    margin: 0;
+}
+
+hr {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background-color:#FF0000;
+}
+
+header {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+}
+
+.buttons-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.header-button {
+    font-size: 32px;
+    color: #660F0F;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.selected-button {
+    color: #00FF85;
+    text-decoration: underline;
+}
+
+.header-button:hover {
+    color: #00FF85;
+}
+
+.header-button:active {
+    opacity: 0.7;
+}
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    width: 95%;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.website-logo{
+    height: 40px;
+}
+
+.copyright {
+    color: #450A0A;
+}
+
+.authentication-session {
+    color: #450A0A;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: right;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
+}
+
+.session-value {
+    color: #FF0000;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.positive-session-value {
+    color: #00FFFF;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: right;
+}
