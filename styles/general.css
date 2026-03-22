@@ -8,6 +8,9 @@ body {
     background-attachment: fixed;
     background-size: cover;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 a {
@@ -27,10 +30,8 @@ hr {
 }
 
 .header-container {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
     width: 95%;
+    margin: 0 auto;
 }
 
 .buttons-flex {
@@ -47,15 +48,25 @@ hr {
     color: #660F0F;
     font-weight: 500;
     transition: 0.3s;
+    
 }
 
 .selected-button {
     color: #00FF85;
     text-decoration: underline;
+    text-shadow: 0 0 2px rgba(0, 255, 133, 0.3);
+    opacity: 0.9;
+    animation: green-pulse 3s ease-in-out infinite;
+    transition: all 0.2s ease;
 }
 
 .header-button:hover {
     color: #00FF85;
+    text-shadow: 0 0 2px rgba(0, 255, 133, 0.3);
+    opacity: 0.9;
+  
+    animation: green-pulse 3s ease-in-out infinite;
+    transition: all 0.2s ease;
 }
 
 .header-button:active {
@@ -63,16 +74,25 @@ hr {
 }
 
 footer {
-    position: fixed;
-    left: 50%;
-    bottom: 24px;
-    transform: translateX(-50%);
+    position: sticky;
+    top: 100vh;
+    background-color: #0B0E14;
     width: 95%;
+    margin: 0 auto;
 }
 
 .footer-flex {
     display: flex;
     justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.left-side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
 }
 
 .website-logo{
@@ -84,8 +104,8 @@ footer {
 }
 
 .authentication-session {
-    color: #450A0A;
-    font-size: 28px;
+    color: #660F0F;
+    font-size: 22px;
     font-weight: 600;
     text-align: right;
     text-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
@@ -93,14 +113,50 @@ footer {
 
 .session-value {
     color: #FF0000;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     text-align: right;
 }
 
 .positive-session-value {
     color: #00FFFF;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     text-align: right;
+    text-shadow: 0 0 8px rgba(0, 184, 255, 0.5);
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 4px rgba(0, 243, 255, 0.8), 0 0 8px rgba(0, 184, 255, 0.5);
+  }
+  50% {
+    opacity: 0.85;
+    text-shadow: 0 0 2px rgba(0, 243, 255, 0.6);
+  }
+}
+
+@keyframes green-pulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 4px rgba(0, 255, 133, 0.7), 0 0 8px rgba(0, 255, 100, 0.3);
+  }
+  50% {
+    opacity: 0.85;
+    text-shadow: 0 0 20px rgba(0, 255, 133, 0.6);
+  }
+}
+
+@media screen and (max-width: 505px) {
+    .header-button {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .header-button {
+        font-size: 22px;
+    }
 }
