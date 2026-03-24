@@ -4,6 +4,11 @@ body {
     align-items: center;
 }
 
+.login-container {
+    filter: drop-shadow(0 0 20px #FF0000);
+    animation: pulse 3s infinite;
+}
+
 form {
     position: relative;
     height: 400px;
@@ -16,16 +21,20 @@ form {
 .form-content {
     width: 100%;
     height: 100%;
-    background-color: #0B0E14;
+    background: linear-gradient(100deg,#0B0E14 0%,#450A0A 75%,#450A0A 100%);
     clip-path: polygon(0 5%, 5% 0, 98% 0, 98% 10%, 100% 12%, 100% 100%, 15% 100%, 0% 88%);
 }
 
 .login-text {
-    font-size: 40px;
-    font-weight: 600;
-    color: #00FFFF;
-    padding-top: 16px;
-    padding-left: 16px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #FF0000;
+    text-align: center;
+    background-color: #0B0E14;
+    border-bottom: 1px solid #FF0000;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    animation: textFlicker 4s infinite;
 }
 
 .input-container {
@@ -63,32 +72,46 @@ input[type="text"]:focus, input[type="password"]:focus{
 }
 
 .button-container {
+    width: 100px;
+    height: 40px;
+    background-color: #FF0000;
+    padding: 1px;
+    clip-path: polygon(15% 0, 85% 0, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 48px;
+}
+
+.button-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 24px;
+    height: 100%;
+    width: 100%;
+    background-color: #0B0E14;
+    clip-path: polygon(15% 0, 85% 0, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
 }
 
 input[type="submit"] {
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    border: none;
     background-color: #0B0E14;
-    border: 1px solid #00FFFF;
-    color: #00FFFF;
-    font-size: 22px;
     font-weight: 600;
-    padding: 12px 16px;
+    color: #00FFFF;
+    clip-path: polygon(15% 0, 85% 0, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
     transition: 0.2s;
-    transform: translate(0, 0);
-    box-shadow: 0 0 0 rgba(255, 0, 0, 0);
 }
 
 input[type="submit"]:hover {
     cursor: pointer;
-    transform: translate(-4px, -4px);
-    box-shadow: 4px 4px 0px rgba(0, 255, 255, 0.15);
+    background-color: #450A0A;
+    color: #FF0000;
 }
 
 input[type="submit"]:active {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .signup-container {
@@ -102,6 +125,10 @@ input[type="submit"]:active {
     font-weight: 700;
 }
 
+.signup-text {
+    text-shadow: 0.75px 0.75px #ff0000;
+}
+
 .error-container {
     display: flex;
     justify-content: center;
@@ -113,4 +140,23 @@ input[type="submit"]:active {
 .error {
     color: #FF0000;
     font-weight: 600;
+}
+
+@keyframes textFlicker {
+    0%, 94%, 100% { opacity: 1; transform: skew(0deg); text-shadow: none; }
+    95% { opacity: 0.8; transform: skew(5deg); text-shadow: 2px 0 #FF0000, -2px 0 #00FFFF; }
+    97% { opacity: 1; transform: skew(-3deg); text-shadow: -2px 0 #FF0000, 2px 0 #00FFFF; }
+    98% { opacity: 0.9; transform: skew(0deg); }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.75;
+  }
 }

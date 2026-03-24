@@ -2,7 +2,8 @@
     session_start();
 
     if(empty($_SESSION["display"])){
-        header("Location: index.php");
+        header("Location: locked.php");
+        exit();
     }
     else {
         $displayView = $_SESSION["display"];
@@ -36,7 +37,7 @@
     </div>
     <div class="cards-container-grid">
         <div class="card-wrapper">
-            <a href="#" class="card-click">
+            <a href="files.php?id=1" class="card-click">
                 <div class="card-container">
                     <div class="card-content">
                         <div class="card-title">WEB_DEVELOPMENT <span class="card-year">[YEAR 1]</span> </div>
@@ -47,7 +48,7 @@
             <div class="percentage-text">100%</div>
         </div>
         <div class="card-wrapper">
-            <a href="#" class="card-click">
+            <a href="files.php?id=1" class="card-click">
                 <div class="card-container">
                     <div class="card-content">
                         <div class="card-title">DATABASE_ENG <span class="card-year">[YEAR 1]</span> </div>
@@ -58,7 +59,7 @@
             <div class="percentage-text">100%</div>
         </div>
         <div class="card-wrapper">
-            <a href="#" class="card-click">
+            <a href="files.php?id=1" class="card-click">
                 <div class="card-container">
                     <div class="card-content">
                         <div class="card-title">PROJECT_BATTLEBOT <span class="card-year">[YEAR 1]</span> </div>
@@ -66,11 +67,11 @@
                     </div>
                 </div>
             </a>
-            <div class="percentage-text">100%</div>
+            <div class="percentage-text">81%</div>
         </div>
     </div>
     <div class="years-container-grid">
-        <a href="#" class="year-click">
+        <a href="files.php?id=1" class="year-click">
             <div class="year-container">
                 <div class="year-content">
                     <div class="year-color"></div>
@@ -79,7 +80,7 @@
                 </div>
             </div>
         </a>
-        <a href="#" class="year-click">
+        <a href="files.php?id=2" class="year-click">
             <div class="year-container">
                 <div class="year-content">
                     <div class="year-color"></div>
@@ -88,7 +89,7 @@
                 </div>
             </div>
         </a>
-        <a href="#" class="year-click">
+        <a href="files.php?id=3" class="year-click">
             <div class="year-container">
                 <div class="year-content">
                     <div class="year-color"></div>
@@ -97,7 +98,7 @@
                 </div>
             </div>
         </a>
-        <a href="#" class="year-click">
+        <a href="files.php?id=4" class="year-click">
             <div class="year-container">
                 <div class="year-content">
                     <div class="year-color"></div>
@@ -106,7 +107,7 @@
                 </div>
             </div>
         </a>
-        <a href="#" class="year-click">
+        <a href="files.php?id=5" class="year-click">
             <div class="year-container">
                 <div class="year-content">
                     <div class="year-color"></div>

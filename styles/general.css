@@ -53,11 +53,10 @@ hr {
 
 .selected-button {
     color: #00FF85;
-    text-decoration: underline;
     text-shadow: 0 0 2px rgba(0, 255, 133, 0.3);
     opacity: 0.9;
-    animation: green-pulse 3s ease-in-out infinite;
-    transition: all 0.2s ease;
+    animation: green-pulse 4s ease-in-out infinite;
+    transition: 0.2s;
 }
 
 .header-button:hover {
@@ -65,8 +64,8 @@ hr {
     text-shadow: 0 0 2px rgba(0, 255, 133, 0.3);
     opacity: 0.9;
   
-    animation: green-pulse 3s ease-in-out infinite;
-    transition: all 0.2s ease;
+    /* animation: green-pulse 4s ease-in-out infinite; */
+    transition: 0.2s;
 }
 
 .header-button:active {
@@ -138,7 +137,7 @@ footer {
   }
 }
 
-@keyframes green-pulse {
+/* @keyframes green-pulse {
   0%, 100% {
     opacity: 1;
     text-shadow: 0 0 4px rgba(0, 255, 133, 0.7), 0 0 8px rgba(0, 255, 100, 0.3);
@@ -147,7 +146,19 @@ footer {
     opacity: 0.85;
     text-shadow: 0 0 20px rgba(0, 255, 133, 0.6);
   }
-}
+} */
+
+/* @keyframes green-pulse {
+  0%, 100% {
+    color: #00FF85;
+    text-shadow: 
+      0 0 5px #00FF85,
+      0 0 10px rgba(0, 255, 133, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 10px #00FF85, 0 0 20px #00FF85, 0 0 40px #00FF85, 0 0 60px rgba(0, 255, 133, 0.8);
+  }
+} */
 
 @media screen and (max-width: 505px) {
     .header-button {

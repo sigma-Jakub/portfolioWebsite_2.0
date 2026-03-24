@@ -55,7 +55,7 @@
     <div class="login-container">
         <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="POST">
             <div class="form-content">
-                <p class="login-text">Log in</p>
+                <p class="login-text">LOG_IN</p>
                 <div class="input-container">
                     <label for="username">username</label>
                     <input type="text" name="username" id="username">
@@ -65,7 +65,9 @@
                     <input type="password" name="password" id="password">
                 </div>
                 <div class="button-container">
-                    <input type="submit" name="submit" id="submit" value="Log in">
+                    <div class="button-content">
+                        <input type="submit" name="submit" id="submit" value="Log in">
+                    </div>
                 </div>
                 <div class="error-container">
                     <?php echo $errorMessage ?>
@@ -80,12 +82,16 @@
         <hr class="footer-divider">
         <div class="footer-flex">
             <div class="left-side">
-                <p class="copyright">copyright &copy; <?php echo date("Y"); ?> by Jakub Mazur. All rights reserved.</p>
                 <img src="../images/website_logo.png" alt="website_logo" class="website-logo">
+                <div>
+                    <p class="copyright">// SRC_ORIGIN: CD_PROJEKT_RED_CORE</p>
+                    <p class="copyright">// ALL_RIGHTS_RESERVED_TO_JAKUB_MAZUR</p>
+                    <p class="copyright">// STAMP: &copy; <?php echo date("Y"); ?></p>
+                </div>
             </div>
             <div class="right-side">
                 <p class="authentication-session">AUTH_SESSION:</p>
-                <p class="session-value">[ LOGIN_REQUIRED_0x0 ]</p>
+                <p class="session-value">[LOGIN_REQUIRED_0x0]</p>
             </div>
         </div>
     </footer>
