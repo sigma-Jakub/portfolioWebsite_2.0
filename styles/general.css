@@ -25,7 +25,7 @@ p {
 hr {
     margin: 0;
     border: none;
-    height: 1px;
+    height: 2px;
     background-color:#FF0000;
 }
 
@@ -46,25 +46,18 @@ hr {
 .header-button {
     font-size: 32px;
     color: #660F0F;
-    font-weight: 500;
-    transition: 0.3s;
-    
+    font-weight: 600;
+    transition: 0.5s ease-out;
 }
 
 .selected-button {
     color: #00FF85;
-    text-shadow: 0 0 2px rgba(0, 255, 133, 0.3);
-    opacity: 0.9;
-    animation: green-pulse 4s ease-in-out infinite;
-    transition: 0.2s;
+    text-shadow: 0 0 5px rgba(0, 255, 133, 0.6), 0 0 10px rgba(0, 255, 133, 0.4);
 }
 
 .header-button:hover {
     color: #00FF85;
     text-shadow: 0 0 2px rgba(0, 255, 133, 0.3);
-    opacity: 0.9;
-  
-    /* animation: green-pulse 4s ease-in-out infinite; */
     transition: 0.2s;
 }
 
@@ -78,6 +71,7 @@ footer {
     background-color: #0B0E14;
     width: 95%;
     margin: 0 auto;
+    pointer-events: none;
 }
 
 .footer-flex {
@@ -136,29 +130,6 @@ footer {
     text-shadow: 0 0 2px rgba(0, 243, 255, 0.6);
   }
 }
-
-/* @keyframes green-pulse {
-  0%, 100% {
-    opacity: 1;
-    text-shadow: 0 0 4px rgba(0, 255, 133, 0.7), 0 0 8px rgba(0, 255, 100, 0.3);
-  }
-  50% {
-    opacity: 0.85;
-    text-shadow: 0 0 20px rgba(0, 255, 133, 0.6);
-  }
-} */
-
-/* @keyframes green-pulse {
-  0%, 100% {
-    color: #00FF85;
-    text-shadow: 
-      0 0 5px #00FF85,
-      0 0 10px rgba(0, 255, 133, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 10px #00FF85, 0 0 20px #00FF85, 0 0 40px #00FF85, 0 0 60px rgba(0, 255, 133, 0.8);
-  }
-} */
 
 @media screen and (max-width: 505px) {
     .header-button {

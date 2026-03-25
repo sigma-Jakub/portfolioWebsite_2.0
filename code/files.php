@@ -244,6 +244,7 @@
                     $stmt->execute();
                     $files = $stmt->fetchall(PDO::FETCH_ASSOC);
 
+                    // <a href="edit.php?id=' . $file["id"] . '" class="file-button">EDIT</a> - may be added
                     foreach($files as $file) {
                         echo '
                             <div class="file-container">
@@ -425,7 +426,7 @@ if($userRole === "admin") {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
         "application/msword", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
         "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.presentationml.presentation", 
-        "application/vnd.ms-powerpoint", "image/png", "image/jpeg"];
+        "application/vnd.ms-powerpoint", "image/png", "image/jpeg", "application/octet-stream", "application/vnd.astah"];
         
         if(empty($title) || empty($description) || empty($permissions) || empty($moduleId) || !empty($error)) {
             $outputMsg = "<p class='pink-error'>Fill up all the inputs.</p>";
@@ -478,7 +479,7 @@ if($userRole === "admin") {
 <body>
     <div class="header-container">
         <div class="buttons-flex">
-            <a href="#" class="header-button">CONTACT</a>
+            <!-- <a href="#" class="header-button">CONTACT</a> -->
             <a href="portfolio.php" class="header-button">PORTFOLIO</a>
             <a href="logout.php" class="header-button">LOG OUT</a>
         </div>

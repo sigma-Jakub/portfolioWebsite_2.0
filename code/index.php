@@ -12,7 +12,7 @@
         $pw = filter_input(INPUT_POST, "password");
 
         if(empty($un) || empty($pw)) {
-            return "<p class='error'>Both inputs must be filled up.</p>";
+            return "<p class='login-error'>ERR: NULL_INPUT</p>";
         } else {
             require_once("dbHandler.php");
             if($dbHandler) {
@@ -28,7 +28,7 @@
                         header("Location: portfolio.php");
                         exit();
                     } else {
-                        return "<p class='error'>Invalid username or password.</p>";
+                        return "<p class='login-error'>ERR: AUTH_FAILURE</p>";
                     }
                 } catch(Exception $ex) {
                     echo $ex;
@@ -50,6 +50,7 @@
     <link rel="icon" href="../images/fav_icon.png">
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/index.css">
+    <script src="../scripts/scramble.js"></script>
 </head>
 <body>
     <div class="login-container">
@@ -57,23 +58,20 @@
             <div class="form-content">
                 <p class="login-text">LOG_IN</p>
                 <div class="input-container">
-                    <label for="username">username</label>
+                    <label for="username">// USERNAME</label>
                     <input type="text" name="username" id="username">
                 </div>
                 <div class="input-container">
-                    <label for="password">password</label>
+                    <label for="password">// PASSWORD</label>
                     <input type="password" name="password" id="password">
                 </div>
                 <div class="button-container">
                     <div class="button-content">
-                        <input type="submit" name="submit" id="submit" value="Log in">
+                        <input type="submit" name="submit" id="submit" value="ENTER">
                     </div>
                 </div>
                 <div class="error-container">
                     <?php echo $errorMessage ?>
-                </div>
-                <div class="signup-container">
-                    <p class="signup-text">No account? <a href="signup.php" class="signup-link">Sign up here.</a></p>
                 </div>
             </div>
         </form>

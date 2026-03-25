@@ -6,7 +6,7 @@ body {
 
 .login-container {
     filter: drop-shadow(0 0 20px #FF0000);
-    animation: pulse 3s infinite;
+    animation: pulse 4s infinite;
 }
 
 form {
@@ -53,14 +53,11 @@ input[type="text"], input[type="password"]{
     font-size: 20px;
     color: #00FFFF;
     padding: 6px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    transform: translate(0, 0);
-    box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    transition: 0.2s;
 }
 
 input[type="text"]:hover, input[type="password"]:hover{
     transform: translate(-2px, -2px);
-    box-shadow: 2px 2px 0px rgba(69, 10, 10, 0.2);
 }
 
 input[type="text"]:focus, input[type="password"]:focus{
@@ -98,7 +95,6 @@ input[type="submit"] {
     font-size: 20px;
     border: none;
     background-color: #0B0E14;
-    font-weight: 600;
     color: #00FFFF;
     clip-path: polygon(15% 0, 85% 0, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
     transition: 0.2s;
@@ -114,27 +110,18 @@ input[type="submit"]:active {
     opacity: 0.7;
 }
 
-.signup-container {
-    margin-top: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.signup-link {
-    font-weight: 700;
-}
-
-.signup-text {
-    text-shadow: 0.75px 0.75px #ff0000;
+.login-error {
+    font-size: 18px;
+    color: #FF00FF;
+    font-weight: bold;
 }
 
 .error-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 24px;
+    margin-bottom: 12px;
 }
 
 .error {
@@ -153,10 +140,7 @@ input[type="submit"]:active {
   0%, 100% {
     opacity: 1;
   }
-  75% {
-    opacity: 0.85;
-  }
   50% {
-    opacity: 0.75;
+    opacity: 0.70;
   }
 }

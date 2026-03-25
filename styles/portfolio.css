@@ -5,59 +5,203 @@
     margin-top: 32px;
 }
 
+/* CARD VALUES */
+
 .card-container {
     position: relative;
     height: 250px;
-    width: 200px;
+    width: 285px;
     background-color: #FF0000;
-    padding: 1px;
+    padding: 2px;
     clip-path: polygon(0 5%, 5% 0, 98% 0, 98% 10%, 100% 12%, 100% 100%, 15% 100%, 0% 88%);
     transition: 0.2s;
     transform: translate(0, 0);
-    box-shadow: 0 0 0 rgba(255, 0, 0, 0);
-}
-
-.card-container:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 2px 2px 0px rgba(69, 10, 10, 0.5);
-}
-
-.card-container:active {
-    opacity: 0.5;
 }
 
 .card-content {
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, #660F0F, #990000);
+    background-color: #0B0E14;
     clip-path: polygon(0 5%, 5% 0, 98% 0, 98% 10%, 100% 12%, 100% 100%, 15% 100%, 0% 88%);
-}
-
-.card-image {
-    height: 200px;
 }
 
 .card-title {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
     padding-top: 4px;
     padding-bottom: 4px;
-    background-color: #0B0E14;
     color: #FF0000;
+    transition: 0.2s;
+    border-bottom: 2px solid #FF0000;
+}
+
+.card-text {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-left: 6px;
+}
+
+.card-text, .card-info {
+    color: #0B0E14;
+    font-size: 18px;
     transition: 0.2s;
 }
 
-.card-year {
-    display: block;
+/* CHIP 1 */
+
+.i:hover {
+    transform: translate(-4px, -4px);
+    background-color: #00FFFF;
 }
 
-.percentage-text {
+.card-container:hover .ip {
+    color: #00FFFF;
+    border-bottom: 2px solid #00FFFF;
+    cursor: default;
+}
+
+.card-container:hover .is {
+    color: #FF0000;
+    cursor: default;
+}
+
+.card-container:hover .id {
+    color: #00FFFF;
+    cursor: default;
+}
+
+/* CHIP 2 */
+
+.a:hover {
+    transform: translate(-4px, -4px);
+    background-color: #FF00FF;
+}
+
+.card-container:hover .ap {
+    color: #FF00FF;
+    border-bottom: 2px solid #FF00FF;
+    cursor: default;
+}
+
+.card-container:hover .as {
+    color: #FF0000;
+    cursor: default;
+}
+
+.card-container:hover .ad {
+    color: #FF00FF;
+    cursor: default;
+}
+
+/* CHIP 3 */
+
+.gu {
+    color: #0B0E14;
+    font-weight: 600;
+    transition: 0.2s;
+    text-decoration: underline;
+}
+
+.g:hover {
+    transform: translate(-4px, -4px);
+    background-color: #FFB800;
+}
+
+.card-container:hover .gp {
+    color: #FFB800;
+    border-bottom: 2px solid #FFB800;
+    cursor: default;
+}
+
+.card-container:hover .gs {
+    color: #FF0000;
+    cursor: default;
+}
+
+.card-container:hover .gd {
+    color: #FFB800;
+    cursor: default;
+}
+
+.card-container:hover .gu {
+    color: #FF0000;
+    cursor: pointer;
+}
+
+.hover-text {
+    font-size: 32px;
+    font-weight: 600;
+    color: #FF0000;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    animation: pulse-text 2.5s infinite;
+    pointer-events: none;
+}
+
+.monitor-box-wrapper {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monitor-box-container {
+    height: 350px;
+    width: 550px;
+    background-color: #0B0E14;
+    border: 2px solid #FF0000;
+    padding: 16px;
+}
+
+.monitor-title {
     font-size: 24px;
-    font-weight: 400;
-    margin-top: 12px;
-    text-shadow: 0 0 8px rgba(0, 184, 255, 0.5);
-    animation: pulse 3s ease-in-out infinite;
+    font-weight: 600;
+    color: #FF0000;
+    border: 2px solid #FF0000;
+    padding: 6px;
+    pointer-events: none;
+}
+
+.pulsing-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-bottom: 3px;
+    background-color: #FF0000;
+    border-radius: 50%;
+    margin-left: 12px;
+    vertical-align: middle;
+    animation: pulse-text 2s infinite;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.monitor-text {
+    display: inline-block;
+    position: absolute;
+    white-space: pre-line;
+    line-height: 1.6;
+    pointer-events: none;
+}
+
+.y-one, .y-two, .y-three, .y-four, .p-skills {
+    position: absolute;
+    font-size: 24px;
+    color: #FF0000;
+    opacity: 0;
+    transition: 0.2s;
+    pointer-events: none;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+.aqua-span {
+    color: #00FFFF;
+}
+
+.green-span {
+    color: #00FF85;;
 }
 
 .years-container-grid {
@@ -74,7 +218,7 @@
     height: 80px;
     width: 270px;
     background-color: #FF0000;
-    padding: 1px;
+    padding: 2px;
     clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 80%, 95% 100%, 0 100%, 0 90%, 1% 88%, 1% 60%, 0 55%);
     transition: 0.2s;
     transform: translate(0, 0);
@@ -101,10 +245,6 @@
     transition: 0.2s;
 }
 
-.year-content:hover {
-    background-color: rgb(69, 10, 10);
-}
-
 .year-color {
     display: inline-block;
     height: 80px;
@@ -127,8 +267,28 @@
     padding-left: 6px;
 }
 
-.year-symbol {
-    height: 48px;
+.year-content:hover {
+    background-color: rgb(69, 10, 10);
+}
+
+.years-container-grid:has(.year-click:nth-child(1):hover) ~ .monitor-box-wrapper .y-one {
+    opacity: 1;
+}
+
+.years-container-grid:has(.year-click:nth-child(2):hover) ~ .monitor-box-wrapper .y-two {
+    opacity: 1;
+}
+
+.years-container-grid:has(.year-click:nth-child(3):hover) ~ .monitor-box-wrapper .y-three {
+    opacity: 1;
+}
+
+.years-container-grid:has(.year-click:nth-child(4):hover) ~ .monitor-box-wrapper .y-four {
+    opacity: 1;
+}
+
+.years-container-grid:has(.year-click:nth-child(5):hover) ~ .monitor-box-wrapper .p-skills {
+    opacity: 1;
 }
 
 .bachelor-timer-container, .current-time-container {
@@ -152,6 +312,7 @@
 #timer, #live-time {
     text-align: center;
     font-weight: 500;
+    pointer-events: none;
 }
 
 .timer-color {
@@ -173,8 +334,9 @@
     width: 350px;
     height: 71px;
     background-color: #FF0000;
-    padding: 1px;
+    padding: 2px;
     clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 80%, 95% 100%, 0 100%, 0 90%, 0.5% 88%, 0.5% 60%, 0 55%);
+    pointer-events: none;
 }
 
 .timer-text-content {
@@ -202,7 +364,7 @@
     justify-content: space-between;
     align-items: flex-end;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 60px;
     margin-bottom: 32px;
 }
 
@@ -244,6 +406,12 @@
 @media screen and (max-width: 858px){
     .years-container-grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 990px){
+    .cards-container-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -306,5 +474,14 @@
 
     .current-time-container {
         margin-top: 15px;
+    }
+}
+
+@keyframes pulse-text {
+  0%, 100% { 
+    opacity: 1; 
+    }
+  50% { 
+    opacity: 0.25; 
     }
 }

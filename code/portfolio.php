@@ -29,47 +29,40 @@
 <body>
     <div class="header-container">
         <div class="buttons-flex">
-            <a href="#" class="header-button">CONTACT</a>
             <a href="portfolio.php" class="header-button selected-button">PORTFOLIO</a>
             <a href="logout.php" class="header-button">LOG OUT</a>
         </div>
         <hr class="header-divider">
     </div>
     <div class="cards-container-grid">
-        <div class="card-wrapper">
-            <a href="files.php?id=1" class="card-click">
-                <div class="card-container">
-                    <div class="card-content">
-                        <div class="card-title">WEB_DEVELOPMENT <span class="card-year">[YEAR 1]</span> </div>
-                        <img src="../images/webdev.png" alt="webdev-img" class="card-image">
-                    </div>
-                </div>
-            </a>
-            <div class="percentage-text">100%</div>
+        <div class="card-container i">
+            <div class="card-content">
+                <p class="card-title ip">BIO_DATA</p>
+                <div class="card-text id">> FULL_NAME: <span class="card-info is">JAKUB MAZUR</span></div>
+                <div class="card-text id">> LOCATION: <span class="card-info is">NETHERLANDS // EMMEN</span></div>
+                <div class="card-text id">> EDUCATION: <span class="card-info is">IT // NHL_STENDEN</span></div>
+                <div class="card-text id">> LANGUAGES: <span class="card-info is">POLISH // ENGLISH</span></div>
+            </div>
         </div>
-        <div class="card-wrapper">
-            <a href="files.php?id=1" class="card-click">
-                <div class="card-container">
-                    <div class="card-content">
-                        <div class="card-title">DATABASE_ENG <span class="card-year">[YEAR 1]</span> </div>
-                        <img src="../images/dataeng.png" alt="databse-img" class="card-image">
-                    </div>
-                </div>
-            </a>
-            <div class="percentage-text">100%</div>
+        <div class="card-container a">
+            <div class="card-content">
+                <p class="card-title ap">TECH_SPEC</p>
+                <div class="card-text ad">> STACK: <span class="card-info as">PHP // SQL // JS // JAVA</span></div>
+                <div class="card-text ad">> HARDWARE: <span class="card-info as">C++ [ARDUINO]</span></div>
+                <div class="card-text ad">> SYSTEM_TOOLS: <span class="card-info as">GIT // DOCKER</span></div>
+            </div>
         </div>
-        <div class="card-wrapper">
-            <a href="files.php?id=1" class="card-click">
-                <div class="card-container">
-                    <div class="card-content">
-                        <div class="card-title">PROJECT_BATTLEBOT <span class="card-year">[YEAR 1]</span> </div>
-                        <img src="../images/battlebot.png" alt="battlebot-img" class="card-image">
-                    </div>
-                </div>
-            </a>
-            <div class="percentage-text">81%</div>
+        <div class="card-container g">
+            <div class="card-content">
+                <p class="card-title gp">DATA_ARCHIVE</p>
+                <div class="card-text gd">> REPO_COUNT: <span class="card-info gs">8</span></div>
+                <div class="card-text gd">> ENV: <span class="card-info gs">WEB // EMBEDDED</span></div>
+                <div class="card-text gd">> UPLINK_01: <span class="card-info gs"><a href="https://github.com/sigma-Jakub" target="_blank" class="gu">GITHUB</a></span></div>
+                <div class="card-text gd">> UPLINK_02: <span class="card-info gs"><a href="https://www.linkedin.com/in/jakub-mazur-39a1aa376/" target="_blank" class="gu">LINKEDIN</a></span></div>
+            </div>
         </div>
     </div>
+    <div class="hover-text">STATUS: HOVER_FOR_ACCESS</div>
     <div class="years-container-grid">
         <a href="files.php?id=1" class="year-click">
             <div class="year-container">
@@ -116,6 +109,65 @@
                 </div>
             </div>
         </a>
+    </div>
+    <div class="monitor-box-wrapper">
+        <div class="monitor-box-container">
+            <div class="monitor-box-content">
+                <div class="monitor-title-container">
+                    <p class="monitor-title">// YEAR_OVERVIEW_MONITOR<span class="pulsing-dot"></span></p>
+                </div>
+                <div class="monitor-text-container">
+                    <div class="monitor text y-one">
+                        <span class="green-span">> STATUS: CRITICAL_MODULES_DETECTED</span>
+                        // MODULES: <span class="aqua-span">[HTML/CSS] [PHP] [JAVA] [C++] [SQL]</span>
+                        // HARDWARE: <span class="aqua-span">[ARDUINO]</span>
+                        // CLIENT: <span class="aqua-span">[UI/UX] [FRONTEND_DEV]</span>
+                        // SECURE: <span class="aqua-span">[NETWORKS] [CYBER_SAFETY]</span>
+                        > UPLINK_STABLE... AWAITING_NEXT_INPUT
+                    </div>
+                    <div class="monitor text y-two">
+                        <span class="green-span">> STATUS: CRITICAL_MODULES_DETECTED</span>
+                        // LOGIC: <span class="aqua-span">LOADING...</span>
+                        // SYSTEMS: <span class="aqua-span">LOADING...</span>
+                        // DEV_PROCESS: <span class="aqua-span">LOADING...</span>
+                        // MANAGEMENT: <span class="aqua-span">LOADING...</span>
+                        > UPLINK_STABLE... AWAITING_NEXT_INPUT
+                    </div>
+                    <!-- <div class="monitor text y-two">
+                        <span class="green-span">> STATUS: CRITICAL_MODULES_DETECTED</span>
+                        // LOGIC: <span class="aqua-span">[JAVA] [JAVASCRIPT] [ALGORITHMS] [DATA_STRUCT]</span>
+                        // SYSTEMS: <span class="aqua-span">[OPERATING_SYSTEMS] [DATABASES] [DATA_EXCHANGE]</span>
+                        // DEV_PROCESS: <span class="aqua-span">[SOFTWARE_QUALITY] [TESTING] [APP_DEV] [AGILE]</span>
+                        // MANAGEMENT: <span class="aqua-span">[IT_SERVICE_MNGMT] [ORG_PROCESSES]</span>
+                        > UPLINK_STABLE... AWAITING_NEXT_INPUT
+                    </div> -->
+                    <div class="monitor text y-three">
+                        <span class="green-span">> STATUS: CRITICAL_MODULES_DETECTED</span>
+                        // FIELD_OPERATIONS: <span class="aqua-span">LOADING...</span>
+                        // LOCATION: <span class="aqua-span">LOADING...</span>
+                        // SPECIALIZATION: <span class="aqua-span">LOADING...</span>
+                        // COMPETENCIES: <span class="aqua-span">LOADING...</span>
+                        > UPLINK_STABLE... AWAITING_NEXT_INPUT
+                    </div>
+                    <div class="monitor text y-four">
+                        <span class="green-span">> STATUS: CRITICAL_MODULES_DETECTED</span>
+                        // AI_INTEGRATION: <span class="aqua-span">LOADING...</span>
+                        // ARCHITECTURE: <span class="aqua-span">LOADING...</span>
+                        // METHODOLOGY: <span class="aqua-span">LOADING...</span>
+                        // GRADUATION_OUTCOME: <span class="aqua-span">LOADING...</span>
+                        > UPLINK_STABLE... AWAITING_NEXT_INPUT
+                    </div>
+                    <div class="monitor text p-skills">
+                        <span class="green-span">> STATUS: CRITICAL_MODULES_DETECTED</span>
+                        // DOCUMENTATION: <span class="aqua-span">[TECH_REPORTS]</span>
+                        // COLLABORATION: <span class="aqua-span">[TEAM_SYNC] [SCRUM] [FEEDBACK]</span>
+                        // COMMUNICATION: <span class="aqua-span">[CLIENT] [STAKEHOLDER]</span>
+                        // ADAPTABILITY: <span class="aqua-span">[LOGIC] [SOLVING] [AGILE]</span>
+                        > UPLINK_STABLE... AWAITING_NEXT_INPUT
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="features-wrapper">
         <div class="bachelor-timer-container">

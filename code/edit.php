@@ -75,9 +75,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jakub Mazur | Edit - <?php echo getProjectDataBasedOnName("title") ?></title>
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/edit.css">
+    <script src="../scripts/uncheck.js"></script>
 </head>
 <body>
     <div class="file-uploader-container">
@@ -126,6 +132,10 @@
                 <input type="submit" name="submit" id="submit" value="Add File">
             </div>
         </form>
+    </div>
+    <div class="file-buttons-container">
+        <a href="">BACK TO FILES</a>
+        <a href="">ACCESS DATABASE</a>
     </div>
 </body>
 </html>
