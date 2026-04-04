@@ -11,13 +11,21 @@ Besides the design itself, the project is fully functional, containing security 
 ## Features
 
 * Authentication System: Secure login with role-based user permissions.
+
 * Database Integration: Fully connected DB managing all project files and metadata.
+  
 * Dynamic Content Display: Pages, modules and files display dynamically based on page URL, user role and permission level.
+
 * Admin Panel: A dedicated admin panel to manage, upload or delete files directly on the website.
+
 * Responsive Design: Optimized for all screen sizes and devices.
+
 * Interactive UI: Dynamic elements, including hover effects and real-time buttons.
+
 * Custom Error Handling: A custom 404 page.
+
 * Access Control: Prevents unauthorized access to restricted files.
+
 
 *More features are currently in development to be added in the future!*
 
