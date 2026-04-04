@@ -156,7 +156,7 @@
                         $stmt->execute();
                         $year = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                        return $year["year_label"];
+                        return strtoupper($year["year_label"]);
                     } catch(Exception $ex) {
                         echo $ex;
                     }
@@ -244,21 +244,20 @@
                     $stmt->execute();
                     $files = $stmt->fetchall(PDO::FETCH_ASSOC);
 
-                    // <a href="edit.php?id=' . $file["id"] . '" class="file-button">EDIT</a> - may be added
                     foreach($files as $file) {
                         echo '
-                            <div class="file-container">
+                            <div class="user-file-container">
                                 <div class="file-content">
                                     <p class="file-title">' . $file["title"] . '</p>
                                     <p class="file-description">' . $file["description"] . '</p>
-                                    <div class="file-buttons-container">
-                                        <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button">VIEW</a>
-                                        <div class="file-button-divider"></div>
-                                        <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
-                                        <a href="delete.php?id=' . $file["id"] . '" class="file-button">DELETE</a>
-                                        <div class="file-button-divider"></div>
-                                        <a href="edit.php?id=' . $file["id"] . '" class="file-button">EDIT</a>
-                                    </div>
+                                        <div class="file-buttons-container">
+                                            <a href="edit.php?id=' . $file["id"] . '" class="file-button">EDIT</a>
+                                            <div class="file-button-divider"></div>
+                                            <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                                            <div class="file-sub-container">
+                                                <a href="delete.php?id=' . $file["id"] . '" class="file-sub-button">DELETE</a>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
                         ';
@@ -277,25 +276,138 @@
                     $files = $stmt->fetchall(PDO::FETCH_ASSOC);
 
                     foreach($files as $file) {
-                        echo '
-                            <div class="user-file-container">
-                                <div class="file-content">
-                                    <p class="file-title">' . $file["title"] . '</p>
-                                    <p class="file-description">' . $file["description"] . '</p>
-                                    <div class="file-buttons-container">
-                                        <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button">VIEW</a>
-                                        <div class="file-button-divider"></div>
-                                        <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                        $fileExt = getFileExtension($file["file_url"]);
+
+                        if($fileExt == "PDF"){
+                            echo '
+                                <div class="user-file-container">
+                                    <div class="file-content">
+                                        <p class="file-title">' . $file["title"] . '</p>
+                                        <p class="file-description">' . $file["description"] . '</p>
+                                        <div class="file-buttons-container">
+                                            <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button">VIEW</a>
+                                            <div class="file-button-divider"></div>
+                                            <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                                            <div class="file-ext">
+                                                <p class="file-subtitle ext-color-pdf">' . $fileExt . ' FILE</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ';
+                            ';
+                        } else if($fileExt == "DOCX") {
+                            echo '
+                                <div class="user-file-container">
+                                    <div class="file-content">
+                                        <p class="file-title">' . $file["title"] . '</p>
+                                        <p class="file-description">' . $file["description"] . '</p>
+                                        <div class="file-buttons-container">
+                                            <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button view-disabled">VIEW</a>
+                                            <div class="file-button-divider"></div>
+                                            <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                                            <div class="file-ext">
+                                                <p class="file-subtitle ext-color-docx">' . $fileExt . ' FILE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ';
+                        } else if($fileExt == "JPG" || $fileExt == "JPEG" || $fileExt == "PNG" || $fileExt == "SVG" || $fileExt == "WEBP" || $fileExt == "GIF") {
+                            echo '
+                                <div class="user-file-container">
+                                    <div class="file-content">
+                                        <p class="file-title">' . $file["title"] . '</p>
+                                        <p class="file-description">' . $file["description"] . '</p>
+                                        <div class="file-buttons-container">
+                                            <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button view-disabled">VIEW</a>
+                                            <div class="file-button-divider"></div>
+                                            <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                                            <div class="file-ext">
+                                                <p class="file-subtitle ext-color-img">' . $fileExt . ' FILE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            '; 
+                        } else if($fileExt == "XLSX") {
+                            echo '
+                                <div class="user-file-container">
+                                    <div class="file-content">
+                                        <p class="file-title">' . $file["title"] . '</p>
+                                        <p class="file-description">' . $file["description"] . '</p>
+                                        <div class="file-buttons-container">
+                                            <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button view-disabled">VIEW</a>
+                                            <div class="file-button-divider"></div>
+                                            <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                                            <div class="file-ext">
+                                                <p class="file-subtitle ext-color-excel">' . $fileExt . ' FILE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            '; 
+                        } else if($fileExt == "PPTM" || $fileExt == "PPSX" || $fileExt == "PPTX") {
+                            echo '
+                                <div class="user-file-container">
+                                    <div class="file-content">
+                                        <p class="file-title">' . $file["title"] . '</p>
+                                        <p class="file-description">' . $file["description"] . '</p>
+                                        <div class="file-buttons-container">
+                                            <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button view-disabled">VIEW</a>
+                                            <div class="file-button-divider"></div>
+                                            <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                                            <div class="file-ext">
+                                                <p class="file-subtitle ext-color-pp">' . $fileExt . ' FILE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            '; 
+                        } else if($fileExt == "ZIP") {
+                            echo '
+                                <div class="user-file-container">
+                                    <div class="file-content">
+                                        <p class="file-title">' . $file["title"] . '</p>
+                                        <p class="file-description">' . $file["description"] . '</p>
+                                        <div class="file-buttons-container">
+                                            <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button view-disabled">VIEW</a>
+                                            <div class="file-button-divider"></div>
+                                            <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                                            <div class="file-ext">
+                                                <p class="file-subtitle ext-color-zip">' . $fileExt . ' FILE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            '; 
+                        } else {
+                            echo '
+                                <div class="user-file-container">
+                                    <div class="file-content">
+                                        <p class="file-title">' . $file["title"] . '</p>
+                                        <p class="file-description">' . $file["description"] . '</p>
+                                        <div class="file-buttons-container">
+                                            <a href="../uploads/' . $file["file_url"] . '" target="_blank" class="file-button view-disabled">VIEW</a>
+                                            <div class="file-button-divider"></div>
+                                            <a href="../uploads/' . $file["file_url"] . '" download class="file-button">DOWNLOAD</a>
+                                            <div class="file-ext">
+                                                <p class="file-subtitle ext-color-other">' . $fileExt . ' FILE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            '; 
+                        }
                     }
                 } catch(Exception $ex) {
                     echo $ex;
                 }
             }
         }
+    }
+
+    function getFileExtension($file) {
+        return strtoupper(pathinfo($file, PATHINFO_EXTENSION));
     }
 
     // CHECKS THE USER ROLE AND IF ITS ADMIN SHOWS THE ADMIN PANEL
@@ -339,7 +451,7 @@ if($userRole === "admin") {
                             <label for="permission-lecturer">lecturers</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="permissions[]" value="employers" id="permission-employer" class="permission-check" checked>
+                            <input type="checkbox" name="permissions[]" value="employer" id="permission-employer" class="permission-check" checked>
                             <label for="permission-employer">employers</label>
                         </div>
                         <div>
@@ -423,10 +535,10 @@ if($userRole === "admin") {
         $filePath = "../uploads/" . $fileName . "";
         $allowedExt = [
         "application/pdf", 
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         "application/msword", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
         "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.presentationml.presentation", 
-        "application/vnd.ms-powerpoint", "image/png", "image/jpeg", "application/octet-stream", "application/vnd.astah"];
+        "application/vnd.ms-powerpoint", "image/png", "image/jpeg", "application/octet-stream", "application/vnd.astah", "text/plain", "application/zip", "application/x-zip-compressed"];
         
         if(empty($title) || empty($description) || empty($permissions) || empty($moduleId) || !empty($error)) {
             $outputMsg = "<p class='pink-error'>Fill up all the inputs.</p>";
@@ -470,7 +582,7 @@ if($userRole === "admin") {
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jakub Mazur | <?php echo $titleNameBasedOnId ?></title>
+    <title>// <?php echo $titleNameBasedOnId ?> | Jakub Mazur</title>
     <link rel="icon" href="../images/fav_icon.png">
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/files.css">
@@ -479,9 +591,9 @@ if($userRole === "admin") {
 <body>
     <div class="header-container">
         <div class="buttons-flex">
-            <!-- <a href="#" class="header-button">CONTACT</a> -->
+            <a href="about.php" class="header-button">ABOUT</a>
             <a href="portfolio.php" class="header-button">PORTFOLIO</a>
-            <a href="logout.php" class="header-button">LOG OUT</a>
+            <a href="logout.php" class="header-button">LOG_OUT</a>
         </div>
         <hr class="header-divider">
     </div>
@@ -508,5 +620,8 @@ if($userRole === "admin") {
             </div>
         </div>
     </footer>
+    <div class="back-to-portfolio-container">
+        <a href="portfolio.php" class="back-to-portfolio-button">BACK_TO_PORTFOLIO</a>
+    </div>
 </body>
 </html>

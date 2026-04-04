@@ -6,21 +6,23 @@
 .module-container-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
     width: 95%;
 }
 
 .files-container-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-bottom: 32px;
+    grid-template-columns: repeat(3, 252px);
+    gap: 48px;
+    margin-bottom: 48px;
+    margin-right: 48px;
 }
 
 .module-title-container {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 48px;
+    margin-bottom: 48px;
     width: 480px;
-    height: 71px;
+    height: 100px;
     background-color: #00FFFF;
     padding: 1px;
     clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 80%, 95% 100%, 0 100%, 0 90%, 0.5% 88%, 0.5% 60%, 0 55%);
@@ -38,14 +40,14 @@
 
 .module-title {
     padding-left: 6px;
-    font-size: 36px;
+    font-size: 28px;
     color: #00FFFF;
-    animation: textFlicker 6s infinite;
+    text-shadow: 0 0 2px #00FFFF, 0 0 3px #00FFFF;
 }
 
 .module-color {
     display: inline-block;
-    height: 71px;
+    height: 100px;
     width: 6px;
     background-color: #00baba;
     opacity: 0.5;
@@ -53,26 +55,16 @@
 
 .module-color-line {
     display: inline-block;
-    height: 71px;
+    height: 120px;
     width: 2px;
     background-color: #00FFFF; 
-}
-
-.file-container {
-    margin: 0 auto;
-    position: relative;
-    height: 278px;
-    width: 220px;
-    background-color: #FF0000;
-    padding: 1px;
-    clip-path: polygon(0 5%, 5% 0, 98% 0, 98% 10%, 100% 12%, 100% 100%, 10% 100%, 0% 91%);
 }
 
 .user-file-container {
     margin: 0 auto;
     position: relative;
-    height: 250px;
-    width: 220px;
+    height: 325px;
+    width: 250px;
     background-color: #FF0000;
     padding: 1px;
     clip-path: polygon(0 5%, 5% 0, 98% 0, 98% 10%, 100% 12%, 100% 100%, 10% 100%, 0% 91%);
@@ -87,8 +79,9 @@
 
 .file-title {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: #FF0000;
     padding: 24px;
     font-size: 24px;
@@ -99,14 +92,14 @@
     border-bottom: 1px solid #FF0000;
     overflow-wrap: break-word;
     overflow: hidden;
-    height: 60px;
+    height: 70px;
     background: linear-gradient(45deg, #0B0E14 0%, #660F0F 100%);
 }
 
 .file-description {
     padding: 6px;
     font-size: 18px;
-    height: 140px;
+    height: 182px;
     overflow-wrap: break-word;
     overflow: hidden;
 }
@@ -120,15 +113,71 @@
 
 .file-button {
     font-size: 20px;
-    width: 110px;
+    width: 125px;
     text-align: center;
     border-top: 1px solid #FF0000;
+    border-bottom: 1px solid #FF0000;
     font-weight: bold;
+}
+
+.file-ext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / 4;
+    color: #FFB800;
+    font-weight: bold;
+    padding-top: 1px;
+}
+
+.file-sub-container {
+    display: block;
+    grid-column: 1 / 4;
+    text-align: center;
+}
+
+.file-sub-button {
+    font-weight: bold;
+    color: #FF0000;
+}
+
+.ext-color-pdf {
+    color: #BC13FE;
+}
+
+.ext-color-docx {
+    color: #1A3D6F;
+}
+
+.ext-color-excel {
+    color: #00FF85;
+}
+
+.ext-color-zip {
+    color: #FFB800;
+}
+
+.ext-color-img {
+    color:#C5C2D1;
+}
+
+.ext-color-other {
+    color: #FF0000;
+}
+
+.ext-color-pp {
+    color: #F97306;
+}
+
+.view-disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #45636E;
 }
 
 .file-button-divider {
     width: 1px;
-    height: 26.5px;
+    height: 27.5px;
     background-color: #FF0000;
 }
 
@@ -273,13 +322,101 @@ td {
     padding: 12px;
 }
 
-@keyframes textFlicker {
-    0%, 94%, 100% { opacity: 1; transform: skew(0deg); text-shadow: 0 0 2px #00FFFF, 0 0 3px #00FFFF, 0 0 5px #00c4c4; }
-    95% { opacity: 0.8; transform: skew(5deg); text-shadow: 2px 0 #FF0000, -2px 0 #00FFFF; }
-    97% { opacity: 1; transform: skew(-3deg); text-shadow: -2px 0 #FF0000, 2px 0 #00FFFF; }
-    98% { opacity: 0.9; transform: skew(0deg); }
+.back-to-portfolio-container {
+    position: fixed;
+    top: 5%;
+    left: 2.5%;
+    z-index: 999;
+    clip-path: polygon(15% 0, 85% 0, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+    padding: 2px;
+    background-color: #FF0000;
+    width: 200px;
+    height: 50px;
 }
 
-/* RESPONSIVNESS AND ANIMATIONS TO BE IMPROVED */
-/* #FFB800 */
-/* NEON AMBER - YELLOW */
+.back-to-portfolio-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(15% 0, 85% 0, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+    background-color: #0B0E14;
+    color: #FF0000;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.back-to-portfolio-button:hover {
+    background-color: #450A0A;
+}
+
+.back-to-portfolio-button:active {
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 1920px){
+    .module-container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .files-container-grid {
+        grid-template-columns: repeat(5, 252px);
+        margin-right: 0;
+        gap: 48px;
+    }
+}
+
+@media screen and (max-width: 1608px){
+    .module-container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .files-container-grid {
+        grid-template-columns: repeat(4, 252px);
+        margin-right: 0;
+        gap: 48px;
+    }
+}
+
+@media screen and (max-width: 1278px){
+    .module-container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .files-container-grid {
+        grid-template-columns: repeat(3, 252px);
+        margin-right: 0;
+        gap: 48px;
+    }
+}
+
+@media screen and (max-width: 938px){
+    .module-container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .files-container-grid {
+        grid-template-columns: repeat(2, 252px);
+        margin-right: 0;
+        gap: 48px;
+    }
+}
+
+@media screen and (max-width: 608px){
+    .module-container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .files-container-grid {
+        grid-template-columns: repeat(1, 252px);
+        margin-right: 0;
+        gap: 48px;
+        justify-content: center;
+    }
+
+    .module-title-container {
+        width: 400px;
+    }
+}

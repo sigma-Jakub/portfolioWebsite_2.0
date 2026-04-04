@@ -43,7 +43,7 @@
 }
 
 .card-text, .card-info {
-    color: #0B0E14;
+    opacity: 0;
     font-size: 18px;
     transition: 0.2s;
 }
@@ -62,11 +62,13 @@
 }
 
 .card-container:hover .is {
+    opacity: 1;
     color: #FF0000;
     cursor: default;
 }
 
 .card-container:hover .id {
+    opacity: 1;
     color: #00FFFF;
     cursor: default;
 }
@@ -85,11 +87,13 @@
 }
 
 .card-container:hover .as {
+    opacity: 1;
     color: #FF0000;
     cursor: default;
 }
 
 .card-container:hover .ad {
+    opacity: 1;
     color: #FF00FF;
     cursor: default;
 }
@@ -115,11 +119,13 @@
 }
 
 .card-container:hover .gs {
+    opacity: 1;
     color: #FF0000;
     cursor: default;
 }
 
 .card-container:hover .gd {
+    opacity: 1;
     color: #FFB800;
     cursor: default;
 }
@@ -428,14 +434,6 @@
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
-    }
-
-    .copyright {
-        font-size: 12px;
-    }
-
-    .website-logo {
-        height: 24px;
     }
 }
 

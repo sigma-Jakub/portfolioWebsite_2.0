@@ -53,12 +53,12 @@ hr {
 .selected-button {
     color: #00FF85;
     text-shadow: 0 0 5px rgba(0, 255, 133, 0.6), 0 0 10px rgba(0, 255, 133, 0.4);
+    transition: 0.2s;
 }
 
 .header-button:hover {
     color: #00FF85;
     text-shadow: 0 0 2px rgba(0, 255, 133, 0.3);
-    transition: 0.2s;
 }
 
 .header-button:active {
@@ -129,6 +129,16 @@ footer {
     opacity: 0.85;
     text-shadow: 0 0 2px rgba(0, 243, 255, 0.6);
   }
+}
+
+@media screen and (max-width: 696px){
+    .copyright {
+        font-size: 12px;
+    }
+
+    .website-logo {
+        height: 24px;
+    }
 }
 
 @media screen and (max-width: 505px) {

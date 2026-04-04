@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Jakub Mazur</title>
+    <title>// PORTFOLIO | Jakub Mazur</title>
     <link rel="icon" href="../images/fav_icon.png">
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/portfolio.css">
@@ -29,8 +29,9 @@
 <body>
     <div class="header-container">
         <div class="buttons-flex">
+            <a href="about.php" class="header-button">ABOUT</a>
             <a href="portfolio.php" class="header-button selected-button">PORTFOLIO</a>
-            <a href="logout.php" class="header-button">LOG OUT</a>
+            <a href="logout.php" class="header-button">LOG_OUT</a>
         </div>
         <hr class="header-divider">
     </div>
@@ -38,7 +39,7 @@
         <div class="card-container i">
             <div class="card-content">
                 <p class="card-title ip">BIO_DATA</p>
-                <div class="card-text id">> FULL_NAME: <span class="card-info is">JAKUB MAZUR</span></div>
+                <div class="card-text id">> FULL_NAME: <span class="card-info is">JAKUB_MAZUR</span></div>
                 <div class="card-text id">> LOCATION: <span class="card-info is">NETHERLANDS // EMMEN</span></div>
                 <div class="card-text id">> EDUCATION: <span class="card-info is">IT // NHL_STENDEN</span></div>
                 <div class="card-text id">> LANGUAGES: <span class="card-info is">POLISH // ENGLISH</span></div>
