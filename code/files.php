@@ -115,11 +115,13 @@
                 foreach($modules as $module) {
                     echo '
                         <div class="module-container">
-                            <div class="module-title-container">
-                                <div class="module-title-content">
-                                    <div class="module-color"></div>
-                                    <div class="module-color-line"></div>
-                                    <div class="module-title">' . $module["module_name"] . '</div>
+                            <div class="module-shadow">
+                                <div class="module-title-container">
+                                    <div class="module-title-content">
+                                        <div class="module-color"></div>
+                                        <div class="module-color-line"></div>
+                                        <div class="module-title">' . $module["module_name"] . '</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="files-container-grid">

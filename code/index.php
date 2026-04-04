@@ -1,6 +1,14 @@
 <?php
     session_start();
 
+    if(empty($_SESSION["display"])){
+        $capitalDisplayView = "LOGIN_REQUIRED_0x0";
+    }
+    else {
+        header("Location: portfolio.php");
+        exit();
+    }
+
     $errorMessage = "";
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -89,7 +97,7 @@
             </div>
             <div class="right-side">
                 <p class="authentication-session">AUTH_SESSION:</p>
-                <p class="session-value">[LOGIN_REQUIRED_0x0]</p>
+                <p class="session-value">[<?php echo $capitalDisplayView ?>]</p>
             </div>
         </div>
     </footer>

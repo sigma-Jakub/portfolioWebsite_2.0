@@ -16,6 +16,11 @@
     gap: 48px;
     margin-bottom: 48px;
     margin-right: 48px;
+    filter: drop-shadow(0 0 3px #FF0000);
+}
+
+.module-shadow {
+   filter: drop-shadow(0 0 5px #00FFFF); 
 }
 
 .module-title-container {
@@ -68,6 +73,12 @@
     background-color: #FF0000;
     padding: 1px;
     clip-path: polygon(0 5%, 5% 0, 98% 0, 98% 10%, 100% 12%, 100% 100%, 10% 100%, 0% 91%);
+    transition: 0.2s;
+    transform: translate(0, 0);
+}
+
+.user-file-container:hover {
+    transform: translate(-4px, -4px);
 }
 
 .file-content {
