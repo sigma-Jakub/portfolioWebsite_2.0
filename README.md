@@ -1,6 +1,6 @@
 # portfolioWebsite_2.0
 
-## A school project portfolio inspired by the aesthetic of [Cyberpunk 2077](https://www.cyberpunk.net/us/en/).
+A school project portfolio inspired by the aesthetic of [Cyberpunk 2077](https://www.cyberpunk.net/us/en/).
 
 ## Overview
 
