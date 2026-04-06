@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "dbHandler.php";
 
     if(empty($_SESSION["display"])){
         header("Location: locked.php");
@@ -8,6 +9,97 @@
     else {
         $displayView = $_SESSION["display"];
         $capitalDisplayView = strtoupper($displayView);
+
+        $userId = getUserIdBasedOnDisplay($displayView);
+        $permissionLevel = getUserPermissionBasedOnId($userId);
+        $capitalPermissionLevel = strtoupper($permissionLevel);
+    }
+
+    function getUsersNumber() {
+        global $dbHandler;
+    
+        if($dbHandler) {
+            try {
+                $stmt = $dbHandler->prepare("SELECT COUNT(`username`) AS total FROM `users`;");
+                $stmt->execute();
+
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                return $result["total"];
+            } catch(Exception $ex) {
+                echo $ex;
+            }
+        }
+    }
+
+    function getModulesNumber() {
+        global $dbHandler;
+    
+        if($dbHandler) {
+            try {
+                $stmt = $dbHandler->prepare("SELECT COUNT(`module_name`) AS total FROM `modules`;");
+                $stmt->execute();
+
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                return $result["total"];
+            } catch(Exception $ex) {
+                echo $ex;
+            }
+        }
+    }
+
+    function getFilesNumber() {
+        global $dbHandler;
+    
+        if($dbHandler) {
+            try {
+                $stmt = $dbHandler->prepare("SELECT COUNT(`title`) AS total FROM `projects`;");
+                $stmt->execute();
+
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                return $result["total"];
+            } catch(Exception $ex) {
+                echo $ex;
+            }
+        }
+    }
+
+    function getUserIdBasedOnDisplay($username) {
+        global $dbHandler;
+
+        if($dbHandler) {
+            try {
+                $stmt = $dbHandler->prepare("SELECT * FROM `users` WHERE `username` = :username;");
+                $stmt->bindParam("username", $username, PDO::PARAM_STR);
+                $stmt->execute();
+
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                return $result["id"];
+            } catch(Exception $ex) {
+                echo $ex;
+            }
+        }
+    }
+
+    function getUserPermissionBasedOnId($id) {
+        global $dbHandler;
+
+        if($dbHandler) {
+            try {
+                $stmt = $dbHandler->prepare("SELECT * FROM `users` WHERE `id` = :id;");
+                $stmt->bindParam("id", $id, PDO::PARAM_INT);
+                $stmt->execute();
+
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                return $result["permission_level"];
+            } catch(Exception $ex) {
+                echo $ex;
+            }
+        }
     }
 ?>
 
@@ -19,7 +111,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>// PORTFOLIO | Jakub Mazur</title>
+    <title>// PORTFOLIO: JAKUB_MAZUR</title>
     <link rel="icon" href="../images/fav_icon.png">
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/portfolio.css">
@@ -38,28 +130,29 @@
     <div class="cards-container-grid">
         <div class="card-container i">
             <div class="card-content">
-                <p class="card-title ip">BIO_DATA</p>
-                <div class="card-text id">> FULL_NAME: <span class="card-info is">JAKUB_MAZUR</span></div>
-                <div class="card-text id">> LOCATION: <span class="card-info is">NETHERLANDS // EMMEN</span></div>
-                <div class="card-text id">> EDUCATION: <span class="card-info is">IT // NHL_STENDEN</span></div>
-                <div class="card-text id">> LANGUAGES: <span class="card-info is">POLISH // ENGLISH</span></div>
+                <p class="card-title ip">USER_PROFILE</p>
+                <div class="card-text id">> USER_ID: <span class="card-info is"><?php echo $userId?></span></div>
+                <div class="card-text id">> USERNAME: <span class="card-info is"><?php echo $capitalDisplayView?></span></div>
+                <div class="card-text id">> PASSWORD: <span class="card-info is">[ENCRYPTED]</span></div>
+                <div class="card-text id">> PERMISSION: <span class="card-info is"><?php echo $capitalPermissionLevel?></span></div>
             </div>
         </div>
         <div class="card-container a">
             <div class="card-content">
-                <p class="card-title ap">TECH_SPEC</p>
-                <div class="card-text ad">> STACK: <span class="card-info as">PHP // SQL // JS // JAVA</span></div>
-                <div class="card-text ad">> HARDWARE: <span class="card-info as">C++ [ARDUINO]</span></div>
-                <div class="card-text ad">> SYSTEM_TOOLS: <span class="card-info as">GIT // DOCKER</span></div>
+                <p class="card-title ap">PORTFOLIO_STATS</p>
+                <div class="card-text ad">> USER_COUNT: <span class="card-info as"><?php echo getUsersNumber()?></span></div>
+                <div class="card-text ad">> MODULE_COUNT: <span class="card-info as"><?php echo getModulesNumber()?></span></div>
+                <div class="card-text ad">> FILE_COUNT: <span class="card-info as"><?php echo getFilesNumber()?></span></div>
+                <div class="card-text ad">> CONTINOUS_EXPANSION: <span class="card-info as">TRUE</span></div>
             </div>
         </div>
         <div class="card-container g">
             <div class="card-content">
-                <p class="card-title gp">DATA_ARCHIVE</p>
-                <div class="card-text gd">> REPO_COUNT: <span class="card-info gs">8</span></div>
-                <div class="card-text gd">> ENV: <span class="card-info gs">WEB // EMBEDDED</span></div>
-                <div class="card-text gd">> UPLINK_01: <span class="card-info gs"><a href="https://github.com/sigma-Jakub" target="_blank" class="gu">GITHUB</a></span></div>
-                <div class="card-text gd">> UPLINK_02: <span class="card-info gs"><a href="https://www.linkedin.com/in/jakub-mazur-39a1aa376/" target="_blank" class="gu">LINKEDIN</a></span></div>
+                <p class="card-title gp">SYSTEM_CORE</p>
+                <div class="card-text gd">> ENGINE: <span class="card-info gs">PHP_8.4.12</span></div>
+                <div class="card-text gd">> MARKUP: <span class="card-info gs">HTML5</span></div>
+                <div class="card-text gd">> STYLING: <span class="card-info gs">CSS3</span></div>
+                <div class="card-text gd">> DATABASE: <span class="card-info gs">MySQL</span></div>
             </div>
         </div>
     </div>

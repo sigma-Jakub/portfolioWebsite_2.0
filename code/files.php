@@ -584,7 +584,7 @@ if($userRole === "admin") {
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>// <?php echo $titleNameBasedOnId ?> | Jakub Mazur</title>
+    <title>// <?php echo $titleNameBasedOnId ?>: JAKUB_MAZUR</title>
     <link rel="icon" href="../images/fav_icon.png">
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/files.css">

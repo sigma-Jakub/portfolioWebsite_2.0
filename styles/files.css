@@ -29,7 +29,7 @@
     width: 480px;
     height: 100px;
     background-color: #00FFFF;
-    padding: 1px;
+    padding: 2px;
     clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 80%, 95% 100%, 0 100%, 0 90%, 0.5% 88%, 0.5% 60%, 0 55%);
 }
 
@@ -52,15 +52,15 @@
 
 .module-color {
     display: inline-block;
-    height: 100px;
+    height: 100%;
     width: 6px;
-    background-color: #00baba;
+    background-color: #00BABA;
     opacity: 0.5;
 }
 
 .module-color-line {
     display: inline-block;
-    height: 120px;
+    height: 100%;
     width: 2px;
     background-color: #00FFFF; 
 }
