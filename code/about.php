@@ -27,9 +27,14 @@
 <body>
     <div class="header-container">
         <div class="buttons-flex">
-            <a href="about.php" class="header-button selected-button">ABOUT</a>
-            <a href="portfolio.php" class="header-button">PORTFOLIO</a>
-            <a href="logout.php" class="header-button">LOG_OUT</a>
+            <div class="buttons-left"></div>
+            <div class="buttons-middle">
+                <a href="about.php" class="header-button selected-button">ABOUT</a>
+                <a href="portfolio.php" class="header-button">PORTFOLIO</a>
+            </div>
+            <div class="buttons-right">
+                <a href="logout.php" class="logout-button">LOG_OUT</a>
+            </div>
         </div>
         <hr class="header-divider">
     </div>

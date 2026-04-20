@@ -36,11 +36,28 @@ hr {
 
 .buttons-flex {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    gap: 60px;
+}
+
+.buttons-left, .buttons-right, .buttons-middle {
+    flex: 1;
+}
+
+.buttons-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.buttons-middle {
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    margin-top: 24px;
-    margin-bottom: 24px;
 }
 
 .header-button {
@@ -48,6 +65,26 @@ hr {
     color: #660F0F;
     font-weight: 600;
     transition: 0.5s ease-out;
+}
+
+.logout-button {
+    font-size: 24px;
+    padding: 12px;
+    border: 2px solid #941515;
+    font-weight: bold;
+    color: #941515;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+.logout-button:hover {
+    border: 2px solid #00FFFF;
+    color: #00FFFF;
+}
+
+.logout-button:active {
+    background-color: #065050;
+    opacity: 0.7;
 }
 
 .selected-button {
@@ -123,7 +160,7 @@ footer {
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
-    text-shadow: 0 0 4px rgba(0, 243, 255, 0.8), 0 0 8px rgba(0, 184, 255, 0.5);
+    text-shadow: 0 0 6px rgba(0, 243, 255, 0.8), 0 0 12px rgba(0, 184, 255, 0.5);
   }
   50% {
     opacity: 0.85;
@@ -131,7 +168,21 @@ footer {
   }
 }
 
-@media screen and (max-width: 696px){
+@media screen and (max-width: 804px) {
+    .buttons-flex {
+        gap: 32px;
+    }
+
+    .buttons-middle {
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: 696px) {
+    .buttons-left {
+        display: none;
+    }
+
     .copyright {
         font-size: 12px;
     }
@@ -144,6 +195,15 @@ footer {
 @media screen and (max-width: 505px) {
     .header-button {
         font-size: 24px;
+    }
+
+    .buttons-middle {
+        gap: 24px;
+    }
+
+    .logout-button {
+        font-size: 20px;
+        padding: 6px;
     }
 }
 

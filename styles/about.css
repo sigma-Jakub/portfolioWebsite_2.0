@@ -282,12 +282,11 @@
     font-size: 28px;
     color: #FF0000;
     font-weight: 600;
-    animation: pulse 3s ease-in-out infinite;
+    animation: red-pulse 3s ease-in-out infinite;
 }
 
 .monologue-text {
     color: #FF0000;
-    /* text-align: center; */
     line-height: 28px;
     padding: 3px;
 }
@@ -348,7 +347,7 @@
     }
 }
 
-@keyframes pulse {
+@keyframes red-pulse {
   0% {
     text-shadow: 0 0 4px #FF0000;
   }

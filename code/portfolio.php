@@ -121,9 +121,14 @@
 <body>
     <div class="header-container">
         <div class="buttons-flex">
-            <a href="about.php" class="header-button">ABOUT</a>
-            <a href="portfolio.php" class="header-button selected-button">PORTFOLIO</a>
-            <a href="logout.php" class="header-button">LOG_OUT</a>
+            <div class="buttons-left"></div>
+            <div class="buttons-middle">
+                <a href="about.php" class="header-button">ABOUT</a>
+                <a href="portfolio.php" class="header-button selected-button">PORTFOLIO</a>
+            </div>
+            <div class="buttons-right">
+                <a href="logout.php" class="logout-button">LOG_OUT</a>
+            </div>
         </div>
         <hr class="header-divider">
     </div>
@@ -227,14 +232,6 @@
                         // MANAGEMENT: <span class="aqua-span">LOADING...</span>
                         > UPLINK_STABLE... AWAITING_NEXT_INPUT
                     </div>
-                    <!-- <div class="monitor text y-two">
-                        <span class="green-span">> STATUS: CRITICAL_MODULES_DETECTED</span>
-                        // LOGIC: <span class="aqua-span">[JAVA] [JAVASCRIPT] [ALGORITHMS] [DATA_STRUCT]</span>
-                        // SYSTEMS: <span class="aqua-span">[OPERATING_SYSTEMS] [DATABASES] [DATA_EXCHANGE]</span>
-                        // DEV_PROCESS: <span class="aqua-span">[SOFTWARE_QUALITY] [TESTING] [APP_DEV] [AGILE]</span>
-                        // MANAGEMENT: <span class="aqua-span">[IT_SERVICE_MNGMT] [ORG_PROCESSES]</span>
-                        > UPLINK_STABLE... AWAITING_NEXT_INPUT
-                    </div> -->
                     <div class="monitor text y-three">
                         <span class="green-span">> STATUS: CRITICAL_MODULES_DETECTED</span>
                         // FIELD_OPERATIONS: <span class="aqua-span">LOADING...</span>

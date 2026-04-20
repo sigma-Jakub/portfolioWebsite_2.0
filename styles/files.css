@@ -48,6 +48,7 @@
     font-size: 28px;
     color: #00FFFF;
     text-shadow: 0 0 2px #00FFFF, 0 0 3px #00FFFF;
+    pointer-events: none;
 }
 
 .module-color {
@@ -105,6 +106,7 @@
     overflow: hidden;
     height: 70px;
     background: linear-gradient(45deg, #0B0E14 0%, #660F0F 100%);
+    pointer-events: none;
 }
 
 .file-description {
@@ -113,6 +115,7 @@
     height: 182px;
     overflow-wrap: break-word;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .file-buttons-container {
@@ -136,9 +139,9 @@
     justify-content: center;
     align-items: center;
     grid-column: 1 / 4;
-    color: #FFB800;
     font-weight: bold;
     padding-top: 1px;
+    pointer-events: none;
 }
 
 .file-sub-container {
@@ -415,7 +418,17 @@ td {
     }
 }
 
-@media screen and (max-width: 608px){
+@media screen and (max-width: 608px) {
+    .back-to-portfolio-button {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .back-to-portfolio-container {
+        width: 140px;
+        height: 30px;
+    }
+
     .module-container-grid {
         grid-template-columns: 1fr;
     }
@@ -429,5 +442,11 @@ td {
 
     .module-title-container {
         width: 400px;
+    }
+}
+
+@media screen and (max-width: 692px) {
+    .back-to-portfolio-container {
+        top: 9.5%;
     }
 }

@@ -17,6 +17,7 @@ body {
     font-weight: bold;
     animation: textFlicker 4s infinite;
     color: #FF0000;
+    pointer-events: none;
 }
 
 .error-description {
@@ -25,6 +26,7 @@ body {
     color: #FF0000;
     animation: textFlicker 4s infinite;
     margin-bottom: 48px;
+    pointer-events: none;
 }
 
 .back-button-container {
