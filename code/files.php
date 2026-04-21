@@ -113,27 +113,47 @@
                 $modules = $stmt->fetchall(PDO::FETCH_ASSOC);
 
                 foreach($modules as $module) {
-                    echo '
-                        <div class="module-container">
-                            <div class="module-shadow">
-                                <div class="module-title-container">
-                                    <div class="module-title-content">
-                                        <div class="module-color"></div>
-                                        <div class="module-color-line"></div>
-                                        <div class="module-title">' . $module["module_name"] . '</div>
+                    if(getNumberOfProjectsPerModule($module["id"]) != 0) {
+                        echo '
+                            <div class="module-container">
+                                <div class="module-shadow">
+                                    <div class="module-title-container">
+                                        <div class="module-title-content">
+                                            <div class="module-color"></div>
+                                            <div class="module-color-line"></div>
+                                            <div class="module-title">' . $module["module_name"] . '</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="files-container-grid">
-                        ';
+                                <div class="files-container-grid">
+                            ';
+                            
+                        getFilesBasedOnModule($module["id"]);
                         
-                    getFilesBasedOnModule($module["id"]);
-                    
-                    echo '
+                        echo '
+                                </div>
                             </div>
-                        </div>
-                    ';
+                        ';
+                    }
                 }
+            } catch(Exception $ex) {
+                echo $ex;
+            }
+        }
+    }
+
+    // HELPER FUNCTION THAT RETURNS NUMBER OF PROJECTS FOR SPECIFIC MODULE
+    function getNumberOfProjectsPerModule($moduleId) {
+        global $dbHandler;
+
+        if($dbHandler) {
+            try {
+                $stmt = $dbHandler->prepare("SELECT COUNT(*) FROM `projects` WHERE `module_id` = :moduleId;");
+                $stmt->bindParam("moduleId", $moduleId, PDO::PARAM_INT);
+                $stmt->execute();
+                $result = $stmt->fetchColumn();
+
+                return $result;
             } catch(Exception $ex) {
                 echo $ex;
             }
